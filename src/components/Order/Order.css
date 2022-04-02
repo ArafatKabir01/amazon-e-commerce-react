@@ -1,0 +1,12 @@
+.cart-items{
+    width: 700px;
+    height: 500px auto;
+    background-color: beige;
+    border: 1px solid gray;
+    border-radius: 8px;
+    margin: 200px;
+    
+}
+.cart-items h2{
+    text-align: center;
+}

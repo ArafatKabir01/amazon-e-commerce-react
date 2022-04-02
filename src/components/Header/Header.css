@@ -1,0 +1,27 @@
+.manue{
+    height: 80px;
+    background-color: #1C2B35;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+.header-container{
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pages{
+    list-style: none;
+}
+.pages a{
+    text-decoration: none;
+    color:white ;
+    margin-left: 36px;
+    list-style: none;
+    font-size: 17px;
+}
+.pages a:hover{
+    color: rgb(231, 187, 77);
+    transition: .2s;
+}
