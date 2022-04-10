@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css'
 import { FontAwesomeIcon , } from '@fortawesome/react-fontawesome'
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+
 const Login = () => {
     const [email , setEmail] = useState('');
     const [password , setPassword] = useState('');
+    const navigate = useNavigate()
     const [
         signInWithEmailAndPassword,
         user,
@@ -20,6 +22,10 @@ const Login = () => {
     }
     const hendleSubmit = event =>{
         event.preventDefault()
+        signInWithEmailAndPassword(email,password)
+    }
+    if(user){
+        navigate('/')
     }
     return (
         <div className='form-container'>
@@ -27,11 +33,11 @@ const Login = () => {
                 <form onSubmit={hendleSubmit}>
                     <div className='group-input'>
                         <span className='level'>Email</span>
-                        <input className='' type='email'></input>
+                        <input onBlur={hendleEmail} className='' type='email' required></input>
                     </div>
                     <div className='group-input'>
                         <span className='level'>Password</span>
-                        <input className='' type='password'></input>
+                        <input onBlur={hendlePassword} className='' type='password' required></input>
                     </div>
                     <input type='submit' className='submite-button'></input>
                 </form>
