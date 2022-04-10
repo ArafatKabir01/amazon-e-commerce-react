@@ -1,7 +1,12 @@
-import React from 'react';
+
 import './Review.css'
 
+
+
+
+
 const Review = ({product,deleteCartItem}) => {
+    
     return (
         <div className='review-items'>
             <div className='product-img'>
@@ -13,6 +18,8 @@ const Review = ({product,deleteCartItem}) => {
                 <p>Ratings: {product.ratings}</p>
             </div>
             </div>
+            
+           
             <button onClick={()=> deleteCartItem(product)}>Delete</button>
             
     

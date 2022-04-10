@@ -1,0 +1,66 @@
+.form-container{
+    width: 600px;
+    margin: 0 auto;
+    border: 1px solid gainsboro;
+    box-sizing: border-box;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+.form-title{
+    font-size: 35px;
+    font-weight: 400;
+    color: rgb(10, 10, 29);
+}
+.level{
+    display: block;
+    padding: 8px;
+    font-size: 18px;
+}
+.group-input{
+    margin-bottom: 20px;
+
+}
+.group-input input{
+    width: 415px;
+    height: 55px;
+    border: 1px solid gainsboro;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 24px;
+}
+.submite-button{
+    width: 415px;
+    height: 55px;
+    background-color:coral;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: aliceblue;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.or-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 20px;
+
+}
+.or-section hr{
+    width: 200px;
+    margin: 18px;
+}
+.google-button{
+    width: 415px;
+    height: 55px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    color: black;
+    
+}
