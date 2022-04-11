@@ -2,8 +2,13 @@ import React from 'react';
 import './Header.css'
 import logo from '../../images/Logo.svg'
 import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Header = () => {
+    const [user] = useAuthState(auth)
+    const hendleSignOut = () => signOut(auth)
     return (
         <div>
             <nav className='manue'>
@@ -15,8 +20,15 @@ const Header = () => {
                         <Link to='/shop'>Shop</Link>
                         <Link to='/cart'>Cart</Link>
                         <Link to='/order'>Orders</Link>
-                        <Link to='/login'>Log In</Link>
-                        <Link to='/signup'>Sign Up</Link>
+                        {
+                              user ? 
+                             <button onClick={hendleSignOut} style={{marginLeft:'10px'}}>Sing Out</button> :
+                             <Link to='/login'>Log In</Link>
+                        }
+                        {
+                              !user ? 
+                              <Link to='/signup'>Sign Up</Link> : ''
+                        }
                     </li>
 
                 </div>

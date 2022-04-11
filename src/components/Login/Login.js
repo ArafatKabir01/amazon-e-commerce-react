@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css'
 import { FontAwesomeIcon , } from '@fortawesome/react-fontawesome'
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -7,13 +7,17 @@ import auth from '../../firebase.init';
 
 const Login = () => {
     const [email , setEmail] = useState('');
-    const [password , setPassword] = useState('');
-    const navigate = useNavigate()
+    const [password , setPassword] = useState('');  
     const [
         signInWithEmailAndPassword,
         user,
         loading
       ] = useSignInWithEmailAndPassword(auth);
+
+      const navigate = useNavigate()
+      const location = useLocation(auth)
+      const from = location.state?.form?.pathname || '/';
+
     const hendleEmail = event =>{
         setEmail(event.target.value)
     }
@@ -25,7 +29,7 @@ const Login = () => {
         signInWithEmailAndPassword(email,password)
     }
     if(user){
-        navigate('/')
+        navigate(from,{replace:true})
     }
     return (
         <div className='form-container'>
